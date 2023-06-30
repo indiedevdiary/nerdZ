@@ -1,133 +1,158 @@
 <html>
 <style>
-.signup{
-		font-size:20pt;
-		height:50pt;	
-		text-align:center;
-		padding:5px;
-		width:100px;
-}
+	.signup {
+		font-size: 20pt;
+		height: 50pt;
+		text-align: center;
+		padding: 5px;
+		width: 100px;
+	}
 
-.Navbar{
-	height:130px;
-	background-color:purple;
-	color:yellow;
-	font-size:40pt;
-	text-align :center;
-}
+	.Navbar {
+		height: 130px;
+		background-color: purple;
+		color: yellow;
+		font-size: 40pt;
+		text-align: center;
+	}
 
 
-.input_page{
-	background-color:rgb(235,117,235);
-	height:550px;
-	text-align:center;
-	margin:70px 150px;
-	font-size:20pt;
-}
+	.input_page {
+		background-color: rgb(235, 117, 235);
+		height: 550px;
+		text-align: center;
+		margin: 70px 150px;
+		font-size: 20pt;
+	}
 
-.inputbar{
-	margin-top:15px;
-	width :300px;
-	height:30px;
-	text-align : center;
-	border-radius:5px;
-	border: solid 1px white;
-}
+	.inputbar {
+		margin-top: 15px;
+		width: 300px;
+		height: 30px;
+		text-align: center;
+		outline: none;
+		border-radius: 5px;
+		border: solid 1px white;
+	}
 
-.submit{
-	margin-top:10px;
-	width :150px;
-	height:30px;
-	text-align : center;
-	border-radius:5px;
-	border: solid 1px white;
-}
 
-.LogInButton{
-	background-color: rgb(235,117,235);
-	border: none;
-	width: 120px;
-	height: 50px;
-	margin-left: 10px;
-	margin-bottom: 10px;
-	color: rgb(255, 255, 0);
-	font-weight: 600;
-	font-size: 25px;
-}
+	.submit {
+		margin-top: 10px;
+		width: 150px;
+		height: 30px;
+		text-align: center;
+		border-radius: 5px;
+		border: solid 1px white;
+	}
 
-.LogInButton:hover{
-	background-color: rgb(172, 89, 172);
-}
+	.LogInButton {
+		background-color: rgb(235, 117, 235);
+		border: none;
+		width: 120px;
+		height: 50px;
+		margin-left: 10px;
+		margin-bottom: 10px;
+		color: rgb(255, 255, 0);
+		font-weight: 600;
+		font-size: 25px;
+	}
 
-.p{
-	margin: 0px;
-	line-height: 20px;
-}
+	.LogInButton:hover {
+		background-color: rgb(172, 89, 172);
+	}
 
-.Password{
-	margin-top:15px;
-	height:30px;
-	text-align : center;
-	border-radius:5px;
-	border: solid 1px white;
-	width: 200px;
-}
+	.p {
+		margin: 0px;
+		line-height: 20px;
+	}
 
-.error{
-	color: rgb(255, 0, 0);
-	margin:5px;
-}
+	.Password {
+		margin-top: 15px;
+		height: 30px;
+		text-align: center;
+		outline: none;
+		border-radius: 5px;
+		border: solid 1px white;
+		width: 200px;
+	}
 
+	.error {
+		color: rgb(255, 0, 0);
+		margin: 5px;
+		font-size: 20px;
+	}
+
+	.heading{
+		font-size: 50px;
+		font-weight: 900;
+		color:rgb(0, 255, 255);
+		margin: 0px;
+		line-height: 20px;
+	}
+
+	.Checkbox{
+		width: 20px;
+		height: 20px;
+		align-self: center;
+		margin-top: 10px;
+	}
 </style>
 
 <script>
-	function ShowPassword(id){
+	function ShowPassword(id) {
 		input = document.getElementById(id).type;
-		if(input =="password")
+		if (input == "password")
 			document.getElementById(id).type = "text";
-		 else
-		    document.getElementById(id).type = "password";
+		else
+			document.getElementById(id).type = "password";
 	}
 
-	function CheckPass()
-	{
+	function CheckPass() {
 		pass = document.getElementById("Password").value;
 		repass = document.getElementById("RePassword").value;
-		console.log("Called");
-		if (pass===repass)
-		 {
-           console.log("login");
-		   length =pass.length;
-		 }
-		 else
-		 {
-			console.log("not matched");
-			document.getElementById("Error").innerText ="error";
-		 }
-		 if(length<8)
-		 {
-			document.getElementById("Error").innerText ="The password is too short \n just like your dick";
-		 }
-		 else if(length>16){
-			document.getElementById("Error").innerText ="The password is too long \n I know you will forget it";
-		 }
+		if (pass == '')
+			document.getElementById("Error").innerText = "Please enter a password";
+		else if (repass == '')
+			document.getElementById("Error").innerText = "Please enter Reenter your password";
+		else {
+			if (pass === repass) {
+				length = pass.length;
+				if (length < 8) {
+					document.getElementById("Error").innerText = "The password is too short \n just like your dick";
+				}
+				else if (length > 16) {
+					document.getElementById("Error").innerText = "The password is too long \n I know you will forget it";
+				}
+				else{
+					document.getElementById("Error").innerText = "Login successful";
+					console.log("login successful");
+				}
+			}
+			else {
+				console.log("not matched");
+				document.getElementById("Error").innerText = "Your password doesn't match";
+			}
+		}
 	}
+
 </script>
-	<head>
+
+<head>
 	<title>NerdZ | Signup</title>
-	</head>
+</head>
 
-	<body style =" background-color:rgb(235,204,235);">
-		<div class="Navbar">
+<body style=" background-color:rgb(235,204,235);">
+	<div class="Navbar">
 
-		 <div>NerdZ</div>
+		<div>NerdZ</div>
 
-		 <div class="signup"> <input type ="button" value ="Log in" onclick ="location.href ='Log in.html'" class="LogInButton"></div>
-		
-		</div>
+		<div class="signup"> <input type="button" value="Log in" onclick="location.href ='Log in.html'"
+				class="LogInButton"></div>
 
-		<div class ="input_page">
-		<p class="p"><br>Sign up</p><br>
+	</div>
+
+	<div class="input_page">
+		<p class="heading"><br>Sign up</p><br>
 		<p class="p">User details</p>
 		<input type="text" class="inputbar" placeholder="First name"><br>
 		<input type="text" class="inputbar" placeholder="Last name"><br>
@@ -136,15 +161,17 @@
 			<option>Female</option>
 			<option>It's none of your business</option>
 		</select><br>
-		<p class="p">Account details</p> 
+		<p class="p">Account details</p>
 		<input type="text" class="inputbar" placeholder="What do you wanna be called"><br>
 		<input type="email" class="inputbar" placeholder="Your Email id"><br>
 		<input type="password" class="Password" id="Password" placeholder="Set your password">
-		<input type="checkbox" onclick="ShowPassword('Password')" >Show Password<br>
+		<input type="checkbox" class="Checkbox" onclick="ShowPassword('Password')">Show Password<br>
 		<input type="password" class="Password" id="RePassword" placeholder="Retype your password">
-		<input type="checkbox" onclick="ShowPassword('RePassword')" >Show Password<br><p id ="Error" class="Error"></p>
-		<input type="submit" class="submit" value ="Sign up" onclick="CheckPass()">
-		</div>
-		</p>
-	</body>
+		<input type="checkbox" class="Checkbox" onclick="ShowPassword('RePassword')">Show Password<br>
+		<p id="Error" class="Error"></p>
+		<input type="submit" class="submit" value="Sign up" onclick="CheckPass()">
+	</div>
+	</p>
+</body>
+
 </html>
