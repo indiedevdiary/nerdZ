@@ -1,0 +1,150 @@
+<html>
+<style>
+.signup{
+		font-size:20pt;
+		height:50pt;	
+		text-align:center;
+		padding:5px;
+		width:100px;
+}
+
+.Navbar{
+	height:130px;
+	background-color:purple;
+	color:yellow;
+	font-size:40pt;
+	text-align :center;
+}
+
+
+.input_page{
+	background-color:rgb(235,117,235);
+	height:550px;
+	text-align:center;
+	margin:70px 150px;
+	font-size:20pt;
+}
+
+.inputbar{
+	margin-top:15px;
+	width :300px;
+	height:30px;
+	text-align : center;
+	border-radius:5px;
+	border: solid 1px white;
+}
+
+.submit{
+	margin-top:10px;
+	width :150px;
+	height:30px;
+	text-align : center;
+	border-radius:5px;
+	border: solid 1px white;
+}
+
+.LogInButton{
+	background-color: rgb(235,117,235);
+	border: none;
+	width: 120px;
+	height: 50px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	color: rgb(255, 255, 0);
+	font-weight: 600;
+	font-size: 25px;
+}
+
+.LogInButton:hover{
+	background-color: rgb(172, 89, 172);
+}
+
+.p{
+	margin: 0px;
+	line-height: 20px;
+}
+
+.Password{
+	margin-top:15px;
+	height:30px;
+	text-align : center;
+	border-radius:5px;
+	border: solid 1px white;
+	width: 200px;
+}
+
+.error{
+	color: rgb(255, 0, 0);
+	margin:5px;
+}
+
+</style>
+
+<script>
+	function ShowPassword(id){
+		input = document.getElementById(id).type;
+		if(input =="password")
+			document.getElementById(id).type = "text";
+		 else
+		    document.getElementById(id).type = "password";
+	}
+
+	function CheckPass()
+	{
+		pass = document.getElementById("Password").value;
+		repass = document.getElementById("RePassword").value;
+		console.log("Called");
+		if (pass===repass)
+		 {
+           console.log("login");
+		   length =pass.length;
+		 }
+		 else
+		 {
+			console.log("not matched");
+			document.getElementById("Error").innerText ="error";
+		 }
+		 if(length<8)
+		 {
+			document.getElementById("Error").innerText ="The password is too short \n just like your dick";
+		 }
+		 else if(length>16){
+			document.getElementById("Error").innerText ="The password is too long \n I know you will forget it";
+		 }
+	}
+</script>
+	<head>
+	<title>NerdZ | Signup</title>
+	</head>
+
+	<body style =" background-color:rgb(235,204,235);">
+		<div class="Navbar">
+
+		 <div>NerdZ</div>
+
+		 <div class="signup"> <input type ="button" value ="Log in" onclick ="location.href ='Log in.html'" class="LogInButton"></div>
+		
+		</div>
+
+		<div class ="input_page">
+		<p class="p"><br>Sign up</p><br>
+		<p class="p">User details</p>
+		<input type="text" class="inputbar" placeholder="First name"><br>
+		<input type="text" class="inputbar" placeholder="Last name"><br>
+		<select class="inputbar">
+			<option>Male</option>
+			<option>Female</option>
+			<option>It's none of your business</option>
+		</select><br>
+		<p class="p">Account details</p> 
+		<input type="text" class="inputbar" placeholder="What do you wanna be called"><br>
+		<input type="email" class="inputbar" placeholder="Your Email id"><br>
+		<input type="password" class="Password" id="Password" placeholder="Set your password">
+		<input type="checkbox" onclick="ShowPassword('Password')" >Show Password<br>
+		<input type="password" class="Password" id="RePassword" placeholder="Retype your password">
+		<input type="checkbox" onclick="ShowPassword('RePassword')" >Show Password<br><p id ="Error" class="Error"></p>
+		<input type="submit" class="submit" value ="Sign up" onclick="CheckPass()">
+		</div>
+		</p>
+	</body>
+</html>

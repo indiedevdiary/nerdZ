@@ -1,0 +1,107 @@
+<html>
+<style>
+#signup{
+	    font-size:20pt;
+	 	color:rgb(0, 0, 0);
+		height:50pt;	
+		text-align:center;
+		padding:5px;
+		width:100px;
+}
+#bar{
+	height:130px;
+	background-color:purple;
+	color:yellow;
+	font-size:40pt;
+	text-align :center;
+}
+
+
+#input_page{
+	background-color:rgb(235,117,235);
+	height:300px;
+	text-align:center;
+	align:center;
+	margin:70px;
+	margin-left:150px ;
+	margin-right:150px ;
+	font-size:20pt;
+}
+
+#inputbar1{
+	margin-top:15px;
+	width :300px;
+	height:30px;
+	text-align : center;
+	border-radius:5px;
+	border: solid 1px white;
+}
+
+#submit{
+	margin-top:25px;
+	width :150px;
+	height:30px;
+	text-align : center;
+	border-radius:5px;
+	border: solid 1px white;
+}
+
+#signupbutton{
+	background-color: rgb(235,117,235);
+	border: none;
+	width: 120px;
+	height: 50px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	color: rgb(255, 255, 0);
+	font-weight: 600;
+	font-size: 25px;
+}
+
+#signupbutton:hover{
+	background-color: rgb(172, 89, 172);
+}
+
+#Password{
+	margin-top:15px;
+	height:30px;
+	text-align : center;
+	border-radius:5px;
+	border: solid 1px white;
+	width: 200px;
+}
+
+</style>
+
+<script>
+	function ShowPassword(){
+		input = document.getElementById("Password").type;
+		if(input =="password")
+			document.getElementById("Password").type = "text";
+		 else
+		    document.getElementById("Password").type = "password";
+	}
+</script>
+	<head>
+	<title>NerdZ | Login</title>
+	</head>
+
+	<body style =" background-color:rgb(235,204,235);">
+		<div id="bar">
+
+		 <div>NerdZ</div>
+
+		 <div id="signup"><input type ="button" value ="Sign up" onclick ="location.href ='Sign up.html'" id="signupbutton"></div>
+		
+		</div>
+
+		<div id ="input_page">
+		<br>Log in<br>
+		<input type="text" id="inputbar1" placeholder="Username or Email ID"><br>
+		<input type="password" id="Password" placeholder="Password">
+		<input type="checkbox" onclick="ShowPassword()" >Show Password<br>
+		<input type="submit" id="submit" value ="Log in" onclick="ShowPassword()">
+		</div>
+	</body>
+
+</html>
