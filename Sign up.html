@@ -19,7 +19,7 @@
 
 	.input_page {
 		background-color: rgb(235, 117, 235);
-		height: 550px;
+		height: 490px;
 		text-align: center;
 		margin: 70px 150px;
 		font-size: 20pt;
@@ -107,7 +107,32 @@
 			document.getElementById(id).type = "password";
 	}
 
-	function CheckPass() {
+	function CheckDetails() {
+		error = DetailCheck();
+		if(error == false)
+		error = PassWord();
+	}
+
+	function DetailCheck(){
+        if(document.getElementById("Name").value == '')
+		{
+			document.getElementById("Error").innerText = "Enter your name";
+			return(true);
+		}
+		if(document.getElementById("UserName").value == '')
+		{
+			document.getElementById("Error").innerText = "Enter your Username";
+			return(true);
+		}
+		if(document.getElementById("Email").value == '')
+		{
+			document.getElementById("Error").innerText = "Enter your Email";
+			return(true);
+		}
+		return(false);
+	}
+
+	function PassWord(){
 		pass = document.getElementById("Password").value;
 		repass = document.getElementById("RePassword").value;
 		if (pass == '')
@@ -117,7 +142,7 @@
 		else {
 			if (pass === repass) {
 				length = pass.length;
-				if (length < 8) {
+				if (length < 5) {
 					document.getElementById("Error").innerText = "The password is too short \n just like your dick";
 				}
 				else if (length > 16) {
@@ -125,11 +150,10 @@
 				}
 				else{
 					document.getElementById("Error").innerText = "Login successful";
-					console.log("login successful");
+					return(false);
 				}
 			}
 			else {
-				console.log("not matched");
 				document.getElementById("Error").innerText = "Your password doesn't match";
 			}
 		}
@@ -154,22 +178,21 @@
 	<div class="input_page">
 		<p class="heading"><br>Sign up</p><br>
 		<p class="p">User details</p>
-		<input type="text" class="inputbar" placeholder="First name"><br>
-		<input type="text" class="inputbar" placeholder="Last name"><br>
+		<input type="text" class="inputbar" id="Name" placeholder="Your name (Not an anime reference)"><br>
 		<select class="inputbar">
 			<option>Male</option>
 			<option>Female</option>
 			<option>It's none of your business</option>
 		</select><br>
-		<p class="p">Account details</p>
-		<input type="text" class="inputbar" placeholder="What do you wanna be called"><br>
-		<input type="email" class="inputbar" placeholder="Your Email id"><br>
+		<p class="p">User details</p>
+		<input type="text" class="inputbar" id="UserName" placeholder="What do you wanna be called"><br>
+		<input type="email" class="inputbar" id="Email" placeholder="Your Email id"><br>
 		<input type="password" class="Password" id="Password" placeholder="Set your password">
 		<input type="checkbox" class="Checkbox" onclick="ShowPassword('Password')">Show Password<br>
 		<input type="password" class="Password" id="RePassword" placeholder="Retype your password">
 		<input type="checkbox" class="Checkbox" onclick="ShowPassword('RePassword')">Show Password<br>
 		<p id="Error" class="Error"></p>
-		<input type="submit" class="submit" value="Sign up" onclick="CheckPass()">
+		<input type="submit" class="submit" value="Sign up" onclick="CheckDetails()">
 	</div>
 	</p>
 </body>
