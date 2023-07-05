@@ -1,5 +1,12 @@
 <html>
 <style>
+	body{
+		background: url('/bg.jpg');
+		background-size: cover;
+		margin: 0;
+		padding: 0;
+	}
+	
 	.signup {
 		font-size: 20pt;
 		height: 50pt;
@@ -10,16 +17,22 @@
 
 	.Navbar {
 		height: 130px;
-		background-color: purple;
-		color: yellow;
 		font-size: 40pt;
 		text-align: center;
+		color:yellow
 	}
 
-
+	.Navbar,.input_page{
+		background: rgba(162, 83, 210, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+		backdrop-filter: blur(6.5px);
+		-webkit-backdrop-filter: blur(6.5px);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+	}
+	
 	.input_page {
-		background-color: rgb(235, 117, 235);
-		height: 490px;
+		border-radius: 10px;
+		padding: 1% 5%;
 		text-align: center;
 		margin: 70px 150px;
 		font-size: 20pt;
@@ -45,20 +58,20 @@
 		border: solid 1px white;
 	}
 
-	.LogInButton {
-		background-color: rgb(235, 117, 235);
-		border: none;
+	.Button {
+		background-color: transparent;
+		border: 2px solid #eba8e2;
 		width: 120px;
 		height: 50px;
-		margin-left: 10px;
-		margin-bottom: 10px;
-		color: rgb(255, 255, 0);
+		margin: 0 10px 10px 0;
+		color: #eba8e2;
+		border-radius: 15px;
 		font-weight: 600;
 		font-size: 25px;
 	}
 
-	.LogInButton:hover {
-		background-color: rgb(172, 89, 172);
+	.Button:hover {
+		background-color: #c08ab8;
 	}
 
 	.p {
@@ -78,19 +91,19 @@
 
 	.error {
 		color: rgb(255, 0, 0);
-		margin: 5px;
+		height: 1px;
 		font-size: 20px;
 	}
 
-	.heading{
+	.heading {
 		font-size: 50px;
 		font-weight: 900;
-		color:rgb(0, 255, 255);
+		color: rgb(0, 255, 255);
 		margin: 0px;
 		line-height: 20px;
 	}
 
-	.Checkbox{
+	.Checkbox {
 		width: 20px;
 		height: 20px;
 		align-self: center;
@@ -109,32 +122,29 @@
 
 	function CheckDetails() {
 		error = DetailCheck();
-		if(error == false)
-		error = PassWord();
-		if(error == false)
-		location.href="Homepage.html";
+		if (error == false)
+			error = PassWord();
+		if (error == false)
+			location.href = "Homepage.html";
 	}
 
-	function DetailCheck(){
-        if(document.getElementById("Name").value == '')
-		{
+	function DetailCheck() {
+		if (document.getElementById("Name").value == '') {
 			document.getElementById("Error").innerText = "Enter your name";
-			return(true);
+			return (true);
 		}
-		if(document.getElementById("UserName").value == '')
-		{
+		if (document.getElementById("UserName").value == '') {
 			document.getElementById("Error").innerText = "Enter your Username";
-			return(true);
+			return (true);
 		}
-		if(document.getElementById("Email").value == '')
-		{
+		if (document.getElementById("Email").value == '') {
 			document.getElementById("Error").innerText = "Enter your Email";
-			return(true);
+			return (true);
 		}
-		return(false);
+		return (false);
 	}
 
-	function PassWord(){
+	function PassWord() {
 		pass = document.getElementById("Password").value;
 		repass = document.getElementById("RePassword").value;
 		if (pass == '')
@@ -150,9 +160,9 @@
 				else if (length > 16) {
 					document.getElementById("Error").innerText = "The password is too long \n I know you will forget it";
 				}
-				else{
+				else {
 					document.getElementById("Error").innerText = "Login successful";
-					location.href="Preference.html";
+					location.href = "Preference.html";
 				}
 			}
 			else {
@@ -167,13 +177,13 @@
 	<title>NerdZ | Signup</title>
 </head>
 
-<body style=" background-color:rgb(235,204,235);">
+<body>
 	<div class="Navbar">
 
 		<div>NerdZ</div>
 
 		<div class="signup"> <input type="button" value="Log in" onclick="location.href ='Log in.html'"
-				class="LogInButton"></div>
+				class="Button"></div>
 
 	</div>
 
@@ -194,7 +204,7 @@
 		<input type="password" class="Password" id="RePassword" placeholder="Retype your password">
 		<input type="checkbox" class="Checkbox" onclick="ShowPassword('RePassword')">Show Password<br>
 		<p id="Error" class="Error"></p>
-		<input type="submit" class="submit" value="Sign up" onclick="CheckDetails()">
+		<input type="submit" class="Button" value="Sign up" style="margin-top: 10px;" onclick="CheckDetails()">
 	</div>
 	</p>
 </body>
