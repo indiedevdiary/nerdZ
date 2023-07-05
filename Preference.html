@@ -1,57 +1,97 @@
 <html>
 <style>
-    /* .Preferance_button{
-            border-radius: 10px;
-            width: 500px;
-            height: 50px;
-            color: black;
-            background-color: rgb(189, 189, 189);
-            border: none;
-            margin: 30px;
-            font-size: 20px;
-        }
-        .checked_button{
-            background: #5a5aff !important;
-            color: white;
-            border: none;
-        }
+    body {
+        background: url('metal.jpg');
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+    }
 
-        .Preferance_button:hover{
-            background-color: gray;
-        } */
-
-    .Preferance_button {
-        border-radius: 50px;
-background: linear-gradient(145deg, #d497cb, #fbb4f2);
-box-shadow:  5px 5px 10px #cf94c7,
-             -5px -5px 10px #ffbcfd;
-        border: none;
+    .preferance_button {
+        background: rgba(0, 53, 81, 0.4);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        border: 3px solid rgba(255, 255, 255, 0.18);
+        margin: 30px;
+        font-size: 25px;
+        font-weight: 600;
+        border-radius: 10px;
         width: 500px;
         height: 50px;
+        color: rgb(49, 49, 49);
+    }
+
+    .preferance_button:hover {
+        background: rgba(0, 53, 81, 0.7);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        border: 3px solid rgba(255, 255, 255, 0.18);
         margin: 30px;
-    }
-
-    .checked_button {}
-
-    .Preferance_button:hover {}
-
-    .Navbar {
-        height: 100px;
-        background-color: purple;
-        color: yellow;
-        font-size: 50pt;
-        text-align: center;
-    }
-
-    .Submit_button {
-        width: 300px;
-        border: none;
+        font-size: 25px;
+        font-weight: 600;
+        border-radius: 10px;
+        width: 500px;
         height: 50px;
-        background-color: rgb(0, 140, 255);
+    }
+
+    .checked_button {
+        background: rgba(0, 53, 81, 0.95) !important;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        border: 3px solid rgba(255, 255, 255, 0.18);
+        margin: 30px;
+        font-size: 25px;
+        font-weight: 600;
+        border-radius: 10px;
+        width: 500px;
+        height: 50px;
+        color: #a253d2;
+    }
+
+    
+    .Submit_button {
+        background: rgba(0, 53, 81, 0.7);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 300px;
+        /* border: none; */
+        height: 50px;
         border-radius: 10px;
         color: white;
         font-size: 30px;
     }
+
+    .Submit_button:hover{
+        background: rgba(0, 53, 81, 0.95) !important;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+.Navbar {
+    background: rgba(162, 83, 210, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    height: 130px;
+    font-size: 40pt;
+    text-align: center;
+    color: yellow
+}
+
 </style>
 <script>
     function CLicked(id) {
