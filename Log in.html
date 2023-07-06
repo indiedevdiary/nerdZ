@@ -1,112 +1,132 @@
 <html>
 <style>
-.signup{
-	    font-size:20pt;
-	 	color:rgb(0, 0, 0);
-		height:50pt;	
-		text-align:center;
-		padding:5px;
-		width:100px;
-}
-.bar{
-	height:130px;
-	background-color:purple;
-	color:yellow;
-	font-size:40pt;
-	text-align :center;
-}
+	body {
+		background: url('metal.jpg');
+		background-size: cover;
+		margin: 0;
+		padding: 0;
+	}
 
+	.signup {
+		font-size: 20pt;
+		color: rgb(0, 0, 0);
+		height: 50pt;
+		text-align: center;
+		padding: 5px;
+		width: 100px;
+	}
 
-.input_page{
-	background-color:rgb(235,117,235);
-	height:300px;
-	text-align:center;
-	margin:70px;
-	margin-left:150px ;
-	margin-right:150px ;
-	font-size:20pt;
-}
+	.Navbar {
+		height: 130px;
+		font-size: 40pt;
+		text-align: center;
+		color:yellow;
+		background: rgba(162, 83, 210, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+		backdrop-filter: blur(6.5px);
+		-webkit-backdrop-filter: blur(6.5px);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+	}
 
-.inputbar{
-	margin-top:15px;
-	width :300px;
-	height:30px;
-	text-align : center;
-	border-radius:5px;
-	border: solid 1px white;
-}
+	.input_page {
+		border-radius: 10px;
+		padding: 1% 5%;
+		text-align: center;
+		margin: 70px 150px;
+		font-size: 20pt;
+		color: #c6dfcb;
+		background: rgba(0, 53, 81, 0.55);
+        box-shadow: 0 8px 32px 0 rgba(0, 53, 81, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
+	}
 
-.submit{
-	margin-top:25px;
-	width :150px;
-	height:30px;
-	text-align : center;
-	border-radius:5px;
-	border: solid 1px white;
-}
+	.inputbar {
+		margin-top: 15px;
+		width: 300px;
+		height: 30px;
+		text-align: center;
+		border-radius: 5px;
+		border: solid 1px white;
+	}
 
-.signupbutton{
-	background-color: #50d2ec;
-	border: none;
-	width: 120px;
-	height: 50px;
-	margin-left: 10px;
-	margin-bottom: 10px;
-	color: rgb(255, 255, 0);
-	font-weight: 600;
-	font-size: 25px;
-}
+	.submit {
+		margin-top: 25px;
+		width: 150px;
+		height: 30px;
+		text-align: center;
+		border-radius: 5px;
+		border: solid 1px white;
+	}
 
-.signupbutton:hover{
-	background-color: rgb(172, 89, 172);
-}
+	.Password {
+		margin-top: 15px;
+		margin-bottom: 20px;
+		height: 30px;
+		text-align: center;
+		border-radius: 5px;
+		border: solid 1px white;
+		width: 200px;
+	}
 
-.Password{
-	margin-top:15px;
-	height:30px;
-	text-align : center;
-	border-radius:5px;
-	border: solid 1px white;
-	width: 200px;
-}
+	.Button {
+		background-color: rgba(0, 52, 82,.4);
+		border: 3px solid rgb(198, 223, 203);
+		width: 120px;
+		height: 50px;
+        margin: 0px 10px 10px 0;  
+		color: #c6dfcb;
+		border-radius: 15px;
+		font-weight: 600;
+		font-size: 25px;
+	}
+	
+	.Button:hover {
+		background-color: rgba(198, 223, 203,.4);
+		border: 3px solid #003453;
+		color: #003453;
+	}
 
- /* 
-  button: #52cfe7
-  darkpurple: #a14de9
-  back:#eba8e2
-  navbar: #3f40d3
- */
+	.heading {
+		font-size: 50px;
+		font-weight: 900;
+		margin: 0px;
+		line-height: 20px;
+	}
+
 </style>
 
 <script>
-	function ShowPassword(){
+	function ShowPassword() {
 		input = document.getElementById("Password").type;
-		if(input =="password")
+		if (input == "password")
 			document.getElementById("Password").type = "text";
-		 else
-		    document.getElementById("Password").type = "password";
+		else
+			document.getElementById("Password").type = "password";
 	}
 </script>
-	<head>
+
+<head>
 	<title>NerdZ | Login</title>
-	</head>
+</head>
 
-	<body style =" background-color:rgb(235,204,235);">
-		<div class="bar">
+<body>
+	<div class="Navbar">
 
-		 <div>NerdZ</div>
+		<div>NerdZ</div>
 
-		 <div class="signup"><input type ="button" value ="Sign up" onclick ="location.href ='Sign up.html'" class="signupbutton"></div>
-		
-		</div>
+		<div class="signup"><input type="button" value="Sign up" onclick="location.href ='Sign up.html'"
+				class="button"></div>
 
-		<div class ="input_page">
-		<br>Log in<br>
+	</div>
+
+	<div class="input_page">
+		<br><p class="heading">Log in</p><br>
 		<input type="text" class="inputbar" placeholder="Username or Email ID"><br>
 		<input type="password" class="Password" id="Password" placeholder="Password">
-		<input type="checkbox" onclick="ShowPassword()" >Show Password<br>
-		<input type="submit" class="submit" value ="Log in" onclick="ShowPassword()">
-		</div>
-	</body>
+		<input type="checkbox" onclick="ShowPassword()">Show Password<br>
+		<input type="submit" class="button" value="Log in" onclick="ShowPassword()">
+	</div>
+</body>
 
 </html>

@@ -1,7 +1,7 @@
 <html>
 <style>
 	body{
-		background: url('bg.jpg');
+		background: /*linear-gradient(rgba(187, 37, 37, 0.3),rgba(202, 29, 29, 0.5)),*/url('metal.jpg');
 		background-size: cover;
 		margin: 0;
 		padding: 0;
@@ -19,15 +19,13 @@
 		height: 130px;
 		font-size: 40pt;
 		text-align: center;
-		color:yellow
-	}
-
-	.Navbar,.input_page{
+		color:yellow;
 		background: rgba(162, 83, 210, 0.55);
 		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 		backdrop-filter: blur(6.5px);
 		-webkit-backdrop-filter: blur(6.5px);
 		border: 1px solid rgba(255, 255, 255, 0.18);
+
 	}
 	
 	.input_page {
@@ -36,7 +34,11 @@
 		text-align: center;
 		margin: 70px 150px;
 		font-size: 20pt;
-		color: rgb(231, 67, 207);
+		color: #c6dfcb;
+		background: rgba(0, 53, 81, 0.55);
+        box-shadow: 0 8px 32px 0 rgba(0, 53, 81, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
 	}
 
 	.inputbar {
@@ -61,18 +63,20 @@
 
 	.Button {
 		background-color: transparent;
-		border: 2px solid #eba8e2;
+		border: 2px solid #003453;
 		width: 120px;
 		height: 50px;
-		margin: 0 10px 10px 0;
-		color: #eba8e2;
+        margin: 0px 10px 10px 0;  
+		color: #003453;
 		border-radius: 15px;
 		font-weight: 600;
 		font-size: 25px;
 	}
 
 	.Button:hover {
-		background-color: #c08ab8;
+		background-color: rgba(0, 52, 82,.5);
+		border: 2px solid #c6dfcb;
+		color: #c6dfcb;
 	}
 
 	.p {
@@ -94,7 +98,9 @@
 	.error {
 		color: rgb(255, 0, 0);
 		height: 1px;
-		font-size: 20px;
+		font-size: 35px;
+		margin-top: 15px;
+		margin-bottom: 50px;
 	}
 
 	.heading {
@@ -105,10 +111,11 @@
 	}
 
 	.Checkbox {
-		width: 20px;
+	    width: 20px;
 		height: 20px;
 		align-self: center;
 		margin-top: 10px;
+		margin-bottom: 5px;
 	}
 </style>
 
@@ -131,15 +138,15 @@
 
 	function DetailCheck() {
 		if (document.getElementById("Name").value == '') {
-			document.getElementById("Error").innerText = "Enter your name";
+			document.getElementById("Error").innerText = "Error: Enter your name";
 			return (true);
 		}
 		if (document.getElementById("UserName").value == '') {
-			document.getElementById("Error").innerText = "Enter your Username";
+			document.getElementById("Error").innerText = "Error: Enter your Username";
 			return (true);
 		}
 		if (document.getElementById("Email").value == '') {
-			document.getElementById("Error").innerText = "Enter your Email";
+			document.getElementById("Error").innerText = "Error: Enter your Email";
 			return (true);
 		}
 		return (false);
@@ -149,17 +156,17 @@
 		pass = document.getElementById("Password").value;
 		repass = document.getElementById("RePassword").value;
 		if (pass == '')
-			document.getElementById("Error").innerText = "Please enter a password";
+			document.getElementById("Error").innerText = "Error: Please enter a password";
 		else if (repass == '')
-			document.getElementById("Error").innerText = "Please enter Reenter your password";
+			document.getElementById("Error").innerText = "Error: Please enter Reenter your password";
 		else {
 			if (pass === repass) {
 				length = pass.length;
 				if (length < 5) {
-					document.getElementById("Error").innerText = "The password is too short \n just like your dick";
+					document.getElementById("Error").innerText = "Error: The password is too short \n just like your dick";
 				}
 				else if (length > 16) {
-					document.getElementById("Error").innerText = "The password is too long \n I know you will forget it";
+					document.getElementById("Error").innerText = "Error: The password is too long \n I know you will forget it";
 				}
 				else {
 					document.getElementById("Error").innerText = "Login successful";
@@ -167,7 +174,7 @@
 				}
 			}
 			else {
-				document.getElementById("Error").innerText = "Your password doesn't match";
+				document.getElementById("Error").innerText = "Error: Your password doesn't match";
 			}
 		}
 	}
@@ -205,7 +212,7 @@
 		<input type="password" class="Password" id="RePassword" placeholder="Retype your password">
 		<input type="checkbox" class="Checkbox" onclick="ShowPassword('RePassword')">Show Password<br>
 		<p id="Error" class="Error"></p>
-		<input type="submit" class="Button" value="Sign up" style="margin-top: 10px;" onclick="CheckDetails()">
+		<input type="submit" class="Button" value="Sign up" onclick="CheckDetails()">
 	</div>
 	</p>
 </body>
