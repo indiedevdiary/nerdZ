@@ -1,26 +1,82 @@
 <html>
 <style>
-    
-	.Navbar {
-		height: 100px;
-		background-color: purple;
-		color: yellow;
-		font-size: 50pt;
+    body{
+		background: /*linear-gradient(rgba(187, 37, 37, 0.3),rgba(202, 29, 29, 0.5)),*/url('metal.jpg');
+		background-size: cover;
+		margin: 0;
+		padding: 0;
+	}
+
+    .Navbar {
+		height: 130px;
+		font-size: 40pt;
 		text-align: center;
+		color:yellow;
+		background: rgba(162, 83, 210, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+		backdrop-filter: blur(6.5px);
+		-webkit-backdrop-filter: blur(6.5px);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+
 	}
 
     .search{
-        border-radius:15px;
-        width:500px;
-        height: 25px;
-        align-self: center;
+        background:rgba(162, 83, 210, 0.7);
+        border: none;
+        color: yellow;
     }
 
-    .scroll{
-        text-align: center;
-        background-color: rgb(128, 128, 128);
+    .Filter_button{
+        background: rgba(0, 53, 81, 0.5);
+        box-shadow: 0 8px 32px 0 rgba(0, 53, 81, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        border: none;
+        color: rgb(49, 49, 49);
+        font-weight: 600;
+    }
+
+    .Filter_button:hover{
+        background: rgba(0, 53, 81, 0.7);
+        box-shadow: 0 8px 32px 0 rgba(0, 53, 81, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        border: none;
+    }
+
+    .Checked_Filter_button{
+        background: rgba(0, 53, 81, 0.95) !important;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(14.5px);
+        -webkit-backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        border: none;
+        color: white;
+        font-weight: 600;
+    }
+
+    .Checked_Filter_button,.Filter_button{
+        width: 90px;
+        height: 40px;
+        font-size: 20px;
     }
 </style>
+
+<script>
+
+     function CLicked(id,Check_id) {
+        let n1 = document.getElementById(id);
+        n1.classList.toggle("Checked_Filter_button");
+        var c1 = document.getElementById(Check_id);
+        if(c1.checked == false)
+         c1.checked = true;
+        else
+         c1.checked = false;
+    }
+
+</script>
     <head>
         <title>NerdZ | Homepage</title>
     </head>
@@ -28,7 +84,9 @@
         <div class="Navbar">
                 <div>NerdZ</div>
         </div>
-        <div id="scroll" class="scroll">
+        <div style="margin-top: 10px;">
+            <input type="checkbox" id="Anime_check">
+            <button class="Filter_button" onclick="CLicked(this.id,'Anime_check')" id="Anime">#Anime</button>
             <input type="text" class="Search">
         </div>
     </body>
