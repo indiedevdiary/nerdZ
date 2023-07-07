@@ -62,6 +62,12 @@
         height: 40px;
         font-size: 20px;
     }
+
+    .checkbox{
+        width: 30px;
+        height: 30px;
+
+    }
 </style>
 
 <script>
@@ -85,7 +91,7 @@
                 <div>NerdZ</div>
         </div>
         <div style="margin-top: 10px;">
-            <input type="checkbox" id="Anime_check">
+            <input type="checkbox" id="Anime_check" class="checkbox" onclick="document.getElementById('Anime').classList.toggle('Checked_Filter_button')">
             <button class="Filter_button" onclick="CLicked(this.id,'Anime_check')" id="Anime">#Anime</button>
             <input type="text" class="Search">
         </div>
