@@ -66,6 +66,8 @@
 		border: 3px solid rgb(198, 223, 203);
 		width: 120px;
 		height: 50px;
+		text-decoration: none;
+		padding: 10px;
         margin: 0px 10px 10px 0;  
 		color: #c6dfcb;
 		border-radius: 15px;
@@ -190,29 +192,30 @@
 
 		<div>NerdZ</div>
 
-		<div class="signup"> <input type="button" value="Log in" onclick="location.href ='Log in.html'"
-				class="Button"></div>
+		<div class="signup"><a href ='Log in.html' class="button">Login</a></div>
 
 	</div>
 
 	<div class="input_page">
 		<p class="heading"><br>Sign up</p><br>
 		<p class="p">User details</p>
-		<input type="text" class="inputbar" id="Name" placeholder="Your name (Not an anime reference)"><br>
-		<select class="inputbar">
-			<option>Male</option>
-			<option>Female</option>
-			<option>It's none of your business</option>
-		</select><br>
-		<p class="p">Account details</p>
-		<input type="text" class="inputbar" id="UserName" placeholder="What do you wanna be called"><br>
-		<input type="email" class="inputbar" id="Email" placeholder="Your Email id"><br>
-		<input type="password" class="Password" id="Password" placeholder="Set your password">
-		<input type="checkbox" class="Checkbox" onclick="ShowPassword('Password')">Show Password<br>
-		<input type="password" class="Password" id="RePassword" placeholder="Retype your password">
-		<input type="checkbox" class="Checkbox" onclick="ShowPassword('RePassword')">Show Password<br>
-		<p id="Error" class="Error"></p>
-		<input type="submit" class="Button" value="Sign up" onclick="CheckDetails()">
+		<form action="location.href">
+			<input type="text" class="inputbar" id="Name" placeholder="Your name (Not an anime reference)" required><br>
+			<select class="inputbar" required>
+				<option>Male</option>
+				<option>Female</option>
+				<option>It's none of your business</option>
+			</select><br>
+			<p class="p">Account details</p>
+			<input type="text" class="inputbar" id="UserName" placeholder="What do you wanna be called" required><br>
+			<input type="email" class="inputbar" id="Email" placeholder="Your Email id" required><br>
+			<input type="password" class="Password" id="Password" placeholder="Set your password" required>
+			<input type="checkbox" class="Checkbox" onclick="ShowPassword('Password')" required>Show Password<br>
+			<input type="password" class="Password" id="RePassword" placeholder="Retype your password" required>
+			<input type="checkbox" class="Checkbox" onclick="ShowPassword('RePassword')" required>Show Password<br>
+			<p id="Error" class="Error"></p>
+			<input type="submit" class="Button" value="Sign up" onclick="CheckDetails()">
+		</form>
 	</div>
 	</p>
 </body>
