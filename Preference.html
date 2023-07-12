@@ -54,7 +54,7 @@
         color: white;
     }
 
-    
+
     .Submit_button {
         background: rgba(0, 53, 81, 0.7);
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -70,7 +70,7 @@
         font-size: 30px;
     }
 
-    .Submit_button:hover{
+    .Submit_button:hover {
         background: rgba(0, 53, 81, 0.95) !important;
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         backdrop-filter: blur(14.5px);
@@ -79,34 +79,25 @@
         border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
-.Navbar {
-    background: rgba(162, 83, 210, 0.55);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(6.5px);
-    -webkit-backdrop-filter: blur(6.5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    .Navbar {
+        background: rgba(162, 83, 210, 0.55);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(6.5px);
+        -webkit-backdrop-filter: blur(6.5px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
 
-    height: 130px;
-    font-size: 80px;
-    text-align: center;
-    color: yellow
-}
-
-</style>
-<script>
-    
-    function CLicked(id) {
-        let n1 = document.getElementById(id);
-        n1.classList.toggle("checked_button")
+        height: 130px;
+        font-size: 80px;
+        text-align: center;
+        color: yellow
     }
-
-</script>
+</style>
 
 <head>
     <title>NerdZ | Preference</title>
 </head>
 
-<body >
+<body>
     <div class="Navbar">
         <div>NerdZ</div>
     </div>
@@ -121,5 +112,14 @@
         <button class="Submit_button" onclick="location.href='Homepage.html'">Submit</button>
     </div>
 </body>
+
+<script>
+
+    function CLicked(id) {
+        let n1 = document.getElementById(id);
+        n1.classList.toggle("checked_button")
+    }
+
+</script>
 
 </html>

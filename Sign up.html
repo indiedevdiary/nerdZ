@@ -1,12 +1,12 @@
 <html>
 <style>
-	body{
-		background: /*linear-gradient(rgba(187, 37, 37, 0.3),rgba(202, 29, 29, 0.5)),*/url('metal.jpg');
+	body {
+		background:
+		url('metal.jpg');
 		background-size: cover;
 		margin: 0;
 		padding: 0;
 	}
-	
 	.signup {
 		font-size: 20pt;
 		height: 50pt;
@@ -14,12 +14,11 @@
 		padding: 5px;
 		width: 100px;
 	}
-
 	.Navbar {
 		height: 130px;
 		font-size: 40pt;
 		text-align: center;
-		color:yellow;
+		color: yellow;
 		background: rgba(162, 83, 210, 0.55);
 		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 		backdrop-filter: blur(6.5px);
@@ -27,7 +26,6 @@
 		border: 1px solid rgba(255, 255, 255, 0.18);
 
 	}
-	
 	.input_page {
 		border-radius: 10px;
 		padding: 1% 5%;
@@ -36,11 +34,10 @@
 		font-size: 20pt;
 		color: #c6dfcb;
 		background: rgba(0, 53, 81, 0.55);
-        box-shadow: 0 8px 32px 0 rgba(0, 53, 81, 0.37);
-        backdrop-filter: blur(14.5px);
-        -webkit-backdrop-filter: blur(14.5px);
+		box-shadow: 0 8px 32px 0 rgba(0, 53, 81, 0.37);
+		backdrop-filter: blur(14.5px);
+		-webkit-backdrop-filter: blur(14.5px);
 	}
-
 	.inputbar {
 		margin: 5px;
 		width: 300px;
@@ -50,8 +47,6 @@
 		border-radius: 5px;
 		border: solid 1px white;
 	}
-
-
 	.submit {
 		margin-top: 10px;
 		width: 150px;
@@ -60,33 +55,29 @@
 		border-radius: 5px;
 		border: solid 1px white;
 	}
-
 	.Button {
-		background-color: rgba(0, 52, 82,.4);
+		background-color: rgba(0, 52, 82, .4);
 		border: 3px solid rgb(198, 223, 203);
 		width: 120px;
 		height: 50px;
 		text-decoration: none;
 		padding: 10px;
-        margin: 0px 10px 10px 0;  
+		margin: 0px 10px 10px 0;
 		color: #c6dfcb;
 		border-radius: 15px;
 		font-weight: 600;
 		font-size: 25px;
 	}
-	
 	.Button:hover {
-		background-color: rgba(198, 223, 203,.4);
+		background-color: rgba(198, 223, 203, .4);
 		border: 3px solid #003453;
 		color: #003453;
 	}
-
 	.p {
 		margin: 5px;
 		line-height: 20px;
 		font-weight: 600;
 	}
-
 	.Password {
 		margin-top: 15px;
 		height: 30px;
@@ -96,7 +87,6 @@
 		border: solid 1px white;
 		width: 200px;
 	}
-
 	.error {
 		color: rgb(255, 0, 0);
 		height: 1px;
@@ -104,23 +94,51 @@
 		margin-top: 15px;
 		margin-bottom: 50px;
 	}
-
 	.heading {
 		font-size: 50px;
 		font-weight: 900;
 		margin: 0px;
 		line-height: 20px;
 	}
-
 	.Checkbox {
-	    width: 20px;
+		width: 20px;
 		height: 20px;
 		align-self: center;
 		margin-top: 10px;
 		margin-bottom: 5px;
 	}
 </style>
-
+<head>
+	<title>NerdZ | Signup</title>
+</head>
+<body>
+	<div class="Navbar">
+		<div>NerdZ</div>
+		<div class="signup"><a href='Log in.html' class="button">Login</a></div>
+	</div>
+	<div class="input_page">
+		<p class="heading"><br>Sign up</p><br>
+		<p class="p">User details</p>
+		<form action="location.href">
+			<input type="text" class="inputbar" id="Name" placeholder="Your name (Not an anime reference)" required><br>
+			<select class="inputbar" required>
+				<option>Male</option>
+				<option>Female</option>
+				<option>It's none of your business</option>
+			</select><br>
+			<p class="p">Account details</p>
+			<input type="text" class="inputbar" id="UserName" placeholder="What do you wanna be called" required><br>
+			<input type="email" class="inputbar" id="Email" placeholder="Your Email id" required><br>
+			<input type="password" class="Password" id="Password" placeholder="Set your password" required>
+			<input type="checkbox" class="Checkbox" onclick="ShowPassword('Password')" required>Show Password<br>
+			<input type="password" class="Password" id="RePassword" placeholder="Retype your password" required>
+			<input type="checkbox" class="Checkbox" onclick="ShowPassword('RePassword')" required>Show Password<br>
+			<p id="Error" class="Error"></p>
+			<input type="submit" class="Button" value="Sign up" onclick="CheckDetails()">
+		</form>
+	</div>
+	</p>
+</body>
 <script>
 	function ShowPassword(id) {
 		input = document.getElementById(id).type;
@@ -129,7 +147,6 @@
 		else
 			document.getElementById(id).type = "password";
 	}
-
 	function CheckDetails() {
 		error = DetailCheck();
 		if (error == false)
@@ -137,7 +154,6 @@
 		if (error == false)
 			location.href = "Homepage.html";
 	}
-
 	function DetailCheck() {
 		if (document.getElementById("Name").value == '') {
 			document.getElementById("Error").innerText = "Error: Enter your name";
@@ -153,7 +169,6 @@
 		}
 		return (false);
 	}
-
 	function PassWord() {
 		pass = document.getElementById("Password").value;
 		repass = document.getElementById("RePassword").value;
@@ -180,44 +195,5 @@
 			}
 		}
 	}
-
 </script>
-
-<head>
-	<title>NerdZ | Signup</title>
-</head>
-
-<body>
-	<div class="Navbar">
-
-		<div>NerdZ</div>
-
-		<div class="signup"><a href ='Log in.html' class="button">Login</a></div>
-
-	</div>
-
-	<div class="input_page">
-		<p class="heading"><br>Sign up</p><br>
-		<p class="p">User details</p>
-		<form action="location.href">
-			<input type="text" class="inputbar" id="Name" placeholder="Your name (Not an anime reference)" required><br>
-			<select class="inputbar" required>
-				<option>Male</option>
-				<option>Female</option>
-				<option>It's none of your business</option>
-			</select><br>
-			<p class="p">Account details</p>
-			<input type="text" class="inputbar" id="UserName" placeholder="What do you wanna be called" required><br>
-			<input type="email" class="inputbar" id="Email" placeholder="Your Email id" required><br>
-			<input type="password" class="Password" id="Password" placeholder="Set your password" required>
-			<input type="checkbox" class="Checkbox" onclick="ShowPassword('Password')" required>Show Password<br>
-			<input type="password" class="Password" id="RePassword" placeholder="Retype your password" required>
-			<input type="checkbox" class="Checkbox" onclick="ShowPassword('RePassword')" required>Show Password<br>
-			<p id="Error" class="Error"></p>
-			<input type="submit" class="Button" value="Sign up" onclick="CheckDetails()">
-		</form>
-	</div>
-	</p>
-</body>
-
 </html>
